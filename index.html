@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Joyeux anniversaire, Noor !</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7ecff;--ink:#3b1f4a;--soft:#7a5a8c;--pink:#ff6f91;--flame:#ffb347;--card:#ffffff;--lilac:#d9c2ff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1230;--ink:#fbe9ff;--soft:#c9a9dd;--card:#2b1b45;--lilac:#4a2f72}}
+:root[data-theme="dark"]{--bg:#1d1230;--ink:#fbe9ff;--soft:#c9a9dd;--card:#2b1b45;--lilac:#4a2f72}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Nunito',system-ui,sans-serif;line-height:1.6;text-align:center;overflow-x:hidden;position:relative;
+background-image:radial-gradient(circle at 15% 10%,var(--lilac) 0,transparent 35%),radial-gradient(circle at 90% 80%,var(--lilac) 0,transparent 30%)}
+main{max-width:560px;margin:0 auto;padding:44px 20px 64px;position:relative;z-index:1}
+.paw{position:absolute;font-size:26px;opacity:.16;z-index:0;pointer-events:none}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:800;font-size:clamp(2.3rem,10vw,3.6rem);line-height:1.05;margin:0 0 12px;letter-spacing:-.02em;animation:pop .9s cubic-bezier(.2,1.4,.4,1) both}
+.sub{color:var(--soft);font-size:1.15rem;margin:0 0 30px}
+.age{display:inline-block;font-family:'Fraunces',Georgia,serif;font-weight:800;font-size:1.1rem;background:var(--pink);color:#fff;border-radius:999px;padding:2px 14px;margin-bottom:14px;transform:rotate(-4deg)}
+.stage{display:flex;align-items:flex-end;justify-content:center;gap:0}
+.cat{width:clamp(78px,24vw,104px);flex:none;margin-bottom:-2px}
+.cat.l{margin-right:-6px}.cat.r{margin-left:-6px;transform:scaleX(-1)}
+.cat svg{display:block;width:100%;height:auto;overflow:visible}
+.cat .tail{transform-origin:78px 105px;animation:wag 2.2s ease-in-out infinite}
+.cat .eo{transform-origin:50px 50px;animation:blink 4.5s infinite}
+.cat .ec{display:none}
+.out .cat .eo{display:none}.out .cat .ec{display:block}
+.out .cat svg{animation:hop .6s ease-out 2}
+.cake{position:relative;width:180px;flex:none;padding-top:56px}
+.layer{height:46px;border-radius:14px 14px 10px 10px;background:var(--pink);position:relative}
+.layer.top{width:136px;margin:0 auto;background:#ff8fab}
+.layer.top::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;border-radius:14px 14px 0 0;background:#fff;opacity:.85}
+.layer.bot{margin-top:-6px}
+.plate{height:10px;width:206px;margin:0 -13px;border-radius:999px;background:var(--lilac)}
+.candle{position:absolute;left:50%;top:6px;transform:translateX(-50%);width:44px;height:70px;border:0;background:none;cursor:pointer;padding:0}
+.candle:focus-visible{outline:3px solid var(--pink);outline-offset:4px;border-radius:10px}
+.stick{position:absolute;left:50%;bottom:0;width:10px;height:36px;margin-left:-5px;border-radius:3px;background:repeating-linear-gradient(45deg,#fff 0 6px,#ffc2d1 6px 12px)}
+.flame{position:absolute;left:50%;bottom:34px;width:16px;height:26px;margin-left:-8px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 50% 70%,#fff6c9,var(--flame));box-shadow:0 0 22px 8px rgba(255,179,71,.55);transform-origin:50% 100%;animation:flick 1.2s ease-in-out infinite}
+.out .flame{display:none}
+.smoke{position:absolute;left:50%;bottom:40px;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:var(--soft);opacity:0}
+.out .smoke{animation:puff 1.6s ease-out}
+.hint{color:var(--ink);font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(1.4rem,6vw,1.8rem);line-height:1.25;margin:26px 0 0;min-height:1.6em;animation:nudge 1.8s ease-in-out infinite}
+.out .hint{animation:none}
+@keyframes nudge{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.reveal{margin-top:34px;display:none}
+.out .reveal{display:block;animation:rise .8s ease-out both}
+.card{background:var(--card);border-radius:22px;padding:26px 24px;text-align:left;box-shadow:0 10px 30px -12px rgba(122,90,140,.45)}
+.card p{margin:0 0 14px;font-size:1.08rem;max-width:62ch}
+.card p:last-child{margin-bottom:0}
+.wish{font-family:'Fraunces',Georgia,serif;font-size:1.5rem;font-weight:600;margin:0 0 18px}
+.cats{color:var(--soft);font-size:.98rem}
+.sig{margin-top:20px;color:var(--soft);font-style:italic}
+canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
+@keyframes flick{0%,100%{transform:scale(1) rotate(-2deg)}50%{transform:scale(1.08,.94) rotate(2deg)}}
+@keyframes puff{0%{opacity:.7;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-50px) scale(4)}}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+@keyframes wag{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(14deg)}}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+@keyframes hop{0%,100%{transform:translateY(0)}45%{transform:translateY(-22px)}}
+h1{background:linear-gradient(90deg,var(--ink) 0%,var(--pink) 50%,var(--ink) 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:pop .9s cubic-bezier(.2,1.4,.4,1) both,shimmer 6s linear infinite}
+.age{animation:wig 3s ease-in-out infinite}
+.fx{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.bl{position:absolute;bottom:-60px;font-size:30px;opacity:.55;animation:floatup linear infinite}
+.sp{position:absolute;font-size:16px;opacity:0;animation:twinkle 3s ease-in-out infinite}
+.pe{position:fixed;pointer-events:none;z-index:3;font-size:18px;transform:translate(-50%,-50%);animation:fly .8s ease-out forwards}
+.out .card p{animation:rise .6s ease-out both}
+.out .card p:nth-child(2){animation-delay:.2s}.out .card p:nth-child(3){animation-delay:.4s}.out .card p:nth-child(4){animation-delay:.6s}.out .card p:nth-child(5){animation-delay:.8s}.out .card p:nth-child(6){animation-delay:1s}.out .card p:nth-child(7){animation-delay:1.2s}.out .card p:nth-child(8){animation-delay:1.4s}
+@keyframes shimmer{to{background-position:-200% 0}}
+@keyframes wig{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(3deg) scale(1.06)}}
+@keyframes floatup{0%{transform:translateY(0) translateX(0) rotate(-6deg)}50%{transform:translateY(-55vh) translateX(18px) rotate(6deg)}100%{transform:translateY(-115vh) translateX(-10px) rotate(-6deg)}}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(.5)}50%{opacity:.85;transform:scale(1.2) rotate(20deg)}}
+@keyframes fly{from{opacity:1;transform:translate(-50%,-50%)}to{opacity:0;transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(.4)}}
+.snd{display:none;position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:12px;z-index:4;width:42px;height:42px;border:0;border-radius:999px;background:var(--card);color:var(--ink);font-size:20px;cursor:pointer;box-shadow:0 6px 18px -8px rgba(122,90,140,.6)}
+.snd:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<span class="paw" style="top:6%;left:8%;transform:rotate(-20deg)">🐾</span>
+<span class="paw" style="top:22%;right:7%;transform:rotate(25deg)">🐾</span>
+<span class="paw" style="top:55%;left:5%;transform:rotate(15deg)">🐾</span>
+<span class="paw" style="top:78%;right:9%;transform:rotate(-25deg)">🐾</span>
+<div class="fx" aria-hidden="true"></div>
+<main>
+  <span class="age">shalom fine shyt</span>
+  <h1>Joyeux anniversaire, Noor&nbsp;!</h1>
+  <p class="sub">T'as 17 ans mashallah</p>
+
+  <div id="scene">
+    <div class="stage">
+      <div class="cat l" id="catL"></div>
+      <div class="cake">
+        <button class="candle" id="candle" aria-label="Souffler la bougie">
+          <span class="flame"></span><span class="smoke"></span><span class="stick"></span>
+        </button>
+        <div class="layer top"></div>
+        <div class="layer bot"></div>
+        <div class="plate"></div>
+      </div>
+      <div class="cat r" id="catR"></div>
+    </div>
+    <p class="hint" id="hint">Fais un vœu, puis touche la bougie.</p>
+
+    <section class="reveal" aria-live="polite">
+      <div class="card">
+        <p class="wish">J'espère t'as pas wish pour mes pièces</p>
+        <p>Parler avec toi ces derniers mois, c'était vraiment trop bien. Tu rends les journées ordinaires plus lumineuses, et ça me fait vraiment plaisir qu'on ait appris à se connaître.</p>
+        <p>J'espère que cette année t'apportera tout ce que tu viens de souhaiter, et quelques surprises en plus. Et j'espère que le Mossad ne va pas t'attraper. 🇮🇱</p>
+        <p>J'aurais aimé te donner qlq chose en personne mais bon, compliqué un peu.</p>
+        <p>T'es tellement vieille maintenant, t'as un mois de plus que moi. J'espère ton anniv me portera chance et j'vais pas lose de game valo aujd sah. 😭</p>
+        <p class="cats">Les chats ont relu ce message et ils approuvent. 🐾 (C'est Bobo et Malenia, les deux chats)</p>
+        <p class="wish">Have fun mama ❤️</p>
+        <p class="sig">De la part d'un mec 1m87 feminist btw</p>
+      </div>
+    </section>
+  </div>
+</main>
+<button class="snd" id="snd" aria-label="Couper le son">🔊</button>
+<canvas id="c" aria-hidden="true"></canvas>
+<script>
+(function(){
+  function cat(fur,belly,pts,eye,line){pts=pts||fur;
+    return '<svg viewBox="0 0 110 120" aria-hidden="true">'+
+    '<path class="tail" d="M78 105 C106 102 104 72 92 68" fill="none" stroke="'+pts+'" stroke-width="9" stroke-linecap="round"/>'+
+    '<ellipse cx="50" cy="90" rx="28" ry="27" fill="'+fur+'"/>'+
+    '<ellipse cx="50" cy="94" rx="14" ry="16" fill="'+belly+'"/>'+
+    '<ellipse cx="38" cy="114" rx="9" ry="5" fill="'+pts+'"/><ellipse cx="62" cy="114" rx="9" ry="5" fill="'+pts+'"/>'+
+    '<polygon points="26,38 28,8 47,27" fill="'+pts+'"/><polygon points="74,38 72,8 53,27" fill="'+pts+'"/>'+
+    '<polygon points="31,30 32,17 41,27" fill="#ffb3c6"/><polygon points="69,30 68,17 59,27" fill="#ffb3c6"/>'+
+    '<circle cx="50" cy="50" r="26" fill="'+fur+'"/>'+(pts!==fur?'<ellipse cx="50" cy="56" rx="14" ry="12" fill="'+pts+'" opacity=".85"/>':'')+
+    '<g class="eo" fill="'+eye+'"><circle cx="40" cy="50" r="3.4"/><circle cx="60" cy="50" r="3.4"/></g>'+
+    '<g class="ec" fill="none" stroke="'+eye+'" stroke-width="2.4" stroke-linecap="round"><path d="M35 52 Q40 45 45 52"/><path d="M55 52 Q60 45 65 52"/></g>'+
+    '<circle cx="33" cy="58" r="4" fill="#ff8fab" opacity=".5"/><circle cx="67" cy="58" r="4" fill="#ff8fab" opacity=".5"/>'+
+    '<polygon points="47,57 53,57 50,61" fill="#ff6f91"/>'+
+    '<path d="M50 61 Q46 66 42 63 M50 61 Q54 66 58 63" fill="none" stroke="'+line+'" stroke-width="1.6" stroke-linecap="round"/>'+
+    '<path d="M30 58 L16 55 M30 62 L16 64 M70 58 L84 55 M70 62 L84 64" stroke="'+line+'" stroke-width="1.2" stroke-linecap="round" opacity=".5"/>'+
+    '</svg>';
+  }
+  document.getElementById('catL').innerHTML=cat('#f1e3cf','#fff8ee','#6b4a3a','#4da3ff','#2a1538');
+  document.getElementById('catR').innerHTML=cat('#6b6878','#8a879a','#6b6878','#ffd966','#c9c3d6');
+
+  var fx=document.querySelector('.fx'),i,h='';
+  for(i=0;i<7;i++)h+='<span class="bl" style="left:'+(6+i*14)+'%;animation-duration:'+(14+i*2.3)+'s;animation-delay:-'+(i*3.1)+'s">🎈</span>';
+  for(i=0;i<12;i++)h+='<span class="sp" style="left:'+((i*37)%96)+'%;top:'+((i*53)%90)+'%;animation-delay:-'+(i*.7)+'s">✨</span>';
+  var hs=['💜','💗','💕'],cs=['🐱','😺','🐾'];
+  for(i=0;i<9;i++)h+='<span class="bl" style="left:'+(3+i*11)+'%;font-size:18px;opacity:.6;animation-duration:'+(11+i*1.7)+'s;animation-delay:-'+(i*2.4)+'s">'+hs[i%3]+'</span>';
+  for(i=0;i<8;i++)h+='<span class="sp" style="left:'+((i*29+8)%92)+'%;top:'+((i*61+10)%88)+'%;font-size:26px;animation-duration:'+(4+i%3)+'s;animation-delay:-'+(i*1.1)+'s">'+cs[i%3]+'</span>';
+  fx.innerHTML=h;
+  document.addEventListener('pointerdown',function(e){
+    if(calm)return;
+    if(ac&&ac.state==='running')note(1200+Math.random()*900,ac.currentTime,.15,'sine',.05);
+    var em=['✨','🐾','⭐','🎉','🐱','💜'];
+    for(var k=0;k<6;k++){
+      var s=document.createElement('span');s.className='pe';s.textContent=em[k%6];
+      s.style.left=e.clientX+'px';s.style.top=e.clientY+'px';
+      var a=Math.random()*6.28,d=40+Math.random()*50;
+      s.style.setProperty('--dx',Math.cos(a)*d+'px');s.style.setProperty('--dy',Math.sin(a)*d+'px');
+      document.body.appendChild(s);setTimeout(function(x){x.remove()},900,s);
+    }
+  });
+  var scene=document.getElementById('scene'),btn=document.getElementById('candle'),hint=document.getElementById('hint');
+  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),parts=[],running=false;
+  var calm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){cv.width=innerWidth;cv.height=innerHeight}
+  size();addEventListener('resize',size);
+  var cols=['#ff6f91','#ffb347','#d9c2ff','#7be0c3','#ffffff','#8ab4ff'];
+  function burst(){
+    var r=btn.getBoundingClientRect(),x=r.left+r.width/2,y=r.top;
+    for(var i=0;i<130;i++){
+      var a=Math.random()*Math.PI*2,s=3+Math.random()*7;
+      parts.push({x:x,y:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-5,g:.18,w:5+Math.random()*5,h:3+Math.random()*4,c:cols[i%cols.length],rot:Math.random()*6,vr:(Math.random()-.5)*.4,life:140+Math.random()*60,paw:i%7===0});
+    }
+    if(!running){running=true;requestAnimationFrame(tick)}
+  }
+  function tick(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    parts=parts.filter(function(p){return p.life>0&&p.y<cv.height+20});
+    parts.forEach(function(p){
+      p.vy+=p.g;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.life--;
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.globalAlpha=Math.min(1,p.life/40);
+      if(p.paw){ctx.font='20px serif';ctx.textAlign='center';ctx.fillText('🐾',0,0)}
+      else{ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h)}
+      ctx.restore();
+    });
+    if(parts.length){requestAnimationFrame(tick)}else{running=false;ctx.clearRect(0,0,cv.width,cv.height)}
+  }
+  var AC=window.AudioContext||window.webkitAudioContext,ac=null;
+  function note(f,t,d,type,vol){
+    var o=ac.createOscillator(),g=ac.createGain();
+    o.type=type||'triangle';o.frequency.value=f;
+    g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol||.16,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+d);
+    o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+d+.05);
+  }
+  function blow(){
+    var n=Math.floor(ac.sampleRate*.5),b=ac.createBuffer(1,n,ac.sampleRate),d=b.getChannelData(0),i;
+    for(i=0;i<n;i++)d[i]=(Math.random()*2-1)*(1-i/n);
+    var s=ac.createBufferSource(),f=ac.createBiquadFilter(),g=ac.createGain();
+    s.buffer=b;f.type='bandpass';f.frequency.value=1200;g.gain.value=.25;
+    s.connect(f);f.connect(g);g.connect(ac.destination);s.start();
+  }
+  function sound(){
+    if(!AC)return;
+    try{
+      ac=ac||new AC();if(ac.state==='suspended')ac.resume();
+      blow();
+      var M=[[392,.75],[392,.25],[440,1],[392,1],[523,1],[494,2],[392,.75],[392,.25],[440,1],[392,1],[587,1],[523,2],[392,.75],[392,.25],[784,1],[659,1],[523,1],[494,1],[440,2],[698,.75],[698,.25],[659,1],[523,1],[587,1],[523,2]];
+      var t=ac.currentTime+.7,k=.4;
+      M.forEach(function(m){
+        note(m[0],t,Math.max(.35,m[1]*k*1.2),'triangle',.16);
+        note(m[0]*2,t,.3,'sine',.04);
+        t+=m[1]*k;
+      });
+      document.getElementById('snd').style.display='block';
+    }catch(e){}
+  }
+  document.getElementById('snd').addEventListener('click',function(e){
+    e.stopPropagation();
+    if(!ac)return;
+    if(ac.state==='running'){ac.suspend();this.textContent='🔇';this.setAttribute('aria-label','Remettre le son')}
+    else{ac.resume();this.textContent='🔊';this.setAttribute('aria-label','Couper le son')}
+  });
+  btn.addEventListener('click',function(){
+    if(scene.classList.contains('out'))return;
+    scene.classList.add('out');
+    hint.textContent='Joyeux anniversaire\u00a0!';
+    if(!calm){burst();setTimeout(burst,700)}
+    sound();
+    setTimeout(function(){var s=document.querySelector('.reveal');if(s&&s.scrollIntoView)s.scrollIntoView({behavior:calm?'auto':'smooth',block:'center'})},500);
+  });
+})();
+</script>
+</body>
+</html>
